@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  labels:
+    app: nginx
+spec:
+  rules:
+  - host: nginx.dev.myday.cloud
+    http:
+      paths:
+      - backend:
+          serviceName: nginx
+          servicePort: 8080
